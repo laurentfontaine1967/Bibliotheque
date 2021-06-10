@@ -16,13 +16,13 @@
             <div class="container-fluid">
                 < <a class="navbar-brand" href="#">HOME</a>
                     
-                    <a class="navbar-brand" href="create_livre.php">supprimer</a>
+                    <a class="navbar-brand" href="delete_emprunt.php">supprimer</a>
             </div>
         </nav>
 
         <h1>EMPRUNTER UN LIVRE</h1>
 
-        <form action="create-handler.php" method="POST">
+        <form action="create-handler_emprunt.php" method="POST">
             <div class="mb-3">
                 <label for="abonne" class="form-label">abonne</label>
                 <input type="number" class="form-control" name="abonne">

@@ -15,6 +15,7 @@ if ($bdd->connect_errno != 0) {
 $reponse = $bdd->query($requete);
 if ($reponse === false) {
     echo 'Identifiant auteur non existant dans la base.';
+    // header('location: creer_auteur.php'); // A venir
     die();
 }
  
