@@ -64,4 +64,7 @@ if (
 } else {
     echo 'Erreur de saisie du formulaire.';
     die();
+}else {
+    echo 'Erreur de saisie du formulaire.';
+    die();
 }
