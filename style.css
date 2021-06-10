@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+body {
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: url("https://bibliotheques.univ-tlse2.fr/medias/photo/livres-sur-table-2-car_1602685660176-jpg")
+    no-repeat center/cover;
+}
+
+td {
+  color: black;
+  font-weight: bold;
+}
+
+th {
+  font-weight: 900;
+  color: maroon;
+}
+
+form {
+  margin: auto;
+  width: 60%;
+}
+
+label {
+  font-weight: 900;
+  color: crimson;
+}
