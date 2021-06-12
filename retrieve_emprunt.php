@@ -15,7 +15,8 @@ personne.prenom AS prenom,
 role.nom AS son_role,
 livre.titre AS livre, 
 auteur.nom AS auteur_nom,
-auteur.prenom AS auteur_prenom
+auteur.prenom AS auteur_prenom,
+emprunt.id AS id
  FROM emprunt
  JOIN personne ON emprunt.abonne=personne.id
  JOIN livre ON livre.id =emprunt.livre
@@ -77,7 +78,7 @@ $liste = $reponse->fetch_all(MYSQLI_ASSOC);
                     <td class="w-25"><?php echo $element['livre']; ?></td>
                     <td class="w-25"><?php echo $element['auteur_nom']; ?></td>
                     <td class="w-25"><?php echo $element['auteur_prenom']; ?></td>
-                    <td><a class="btn btn-danger" href="delete_emprunt.php?id=<?php echo $element['id']; ?>">supprimer</a></td>
+                    <td><a class="btn btn-danger" href="delete_emprunt.php?id=<?php echo $element['id'];?>">Supprimer</a></td>
                 </tr>
             <?php } ?>
         </table>
