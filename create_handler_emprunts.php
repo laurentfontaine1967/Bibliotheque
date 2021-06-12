@@ -11,7 +11,8 @@ if (
     && is_numeric($_POST['abonne'])
     && is_numeric($_POST['titre'])
     
-) {
+) 
+{
 
 
 //--------------------------
@@ -22,12 +23,19 @@ if ($bdd->connect_errno != 0) {
     echo 'Impossible de se connecter à la BDD.';
     die();
 }
-$requete='SELECT id FROM personne WHERE `id` = '.$_POST['abonne'];
+$abonne=$_POST['abonne'];
+$requete="SELECT id FROM personne WHERE `id` =$abonne ";
 
 //reponse
 $reponse = $bdd->query($requete);
 if ($reponse === false) {
-    echo 'abonne inconnu dans la base.';
+    echo 'pb de connexion a la bdd';
+    die();
+}
+//lire reponse
+$existe=$reponse->fetch_all(MYSQLI_ASSOC);
+if ($existe == null) {
+    echo "Acun abonne a ce numero";
     die();
 }
 //--------------------
@@ -38,22 +46,29 @@ if ($bdd->connect_errno != 0) {
     echo 'Impossible de se connecter à la BDD.';
     die();
 }
-$requetes='SELECT id FROM livre WHERE `id` = '.$_POST['livre'];
+$livre=$_POST['titre'];
+$requetes="SELECT id FROM livre WHERE `id` = $livre";
+
 //reponse
-$reponses = $bdd->query($requete);
+$reponses = $bdd->query($requetes);
 if ($reponses === false) {
-    echo 'Livre inconnu dans la base.';
+    echo 'pb de connexion a la bdd-verif id livre';
     die();
 }
-
+//lire reponse
+$existe=$reponses->fetch_all(MYSQLI_ASSOC);
+if ($existe == null) {
+    echo "Aucun livre a ce numero";
+    die();
+}
 $abonne=$_POST['abonne'];
-$livre=$_POST['livre'];
+$livre=$_POST['titre'];
 $date_pret=$_POST['date_emprunt'];
 $date_retour=$_POST['date_retour'];
 
 
 $quete= "INSERT INTO `emprunt`
-VALUES ( NULL, $abonne,'$livre','$date_emprunt,'$date_retour')";
+VALUES ( NULL, $abonne,'$livre','$date_pret','$date_retour')";
 
 // connexion
 $bdd = new mysqli('localhost', 'root', '', 'bibliotheque');
@@ -72,7 +87,8 @@ $reponse = $bdd->query($quete);
         header('location: retrieve_emprunt.php');
     }
 }
-else {
+else 
+{
     echo 'Erreur de saisie du formulaire.';
     die();
 }

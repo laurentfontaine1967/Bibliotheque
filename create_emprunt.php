@@ -16,13 +16,15 @@
             <div class="container-fluid">
                 < <a class="navbar-brand" href="#">HOME</a>
                     
-                    <a class="navbar-brand" href="delete_emprunt.php">supprimer</a>
+                    <a class="navbar-brand" href="delete_emprunt.php">supprimer un emprunt</a>
+                   
+            </div>
             </div>
         </nav>
 
         <h1>EMPRUNTER UN LIVRE</h1>
 
-        <form action="create-handler_emprunt.php" method="POST">
+        <form action="create_handler_emprunts.php" method="POST">
             <div class="mb-3">
                 <label for="abonne" class="form-label">abonne</label>
                 <input type="number" class="form-control" name="abonne">
@@ -35,12 +37,12 @@
 
                 <div class="mb-3">
                     <label for="date_emprunt" class="form-label">date emprunt</label>
-                    <input type="text" class="form-control" name="date_emprunt">
+                    <input type="date" class="form-control" name="date_emprunt">
                 </div>
 
                 <div class="mb-3">
                     <label for="date_retour" class="form-label">date de retour</label>
-                    <input type="text" class="form-control" name="date_retour">
+                    <input type="date" class="form-control" name="date_retour">
                 </div>
 
                 <button type="submit" class="btn btn-warning" name="valider">Enregistrer en base</button>

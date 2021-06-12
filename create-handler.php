@@ -14,11 +14,16 @@ if ($bdd->connect_errno != 0) {
 //reponse
 $reponse = $bdd->query($requete);
 if ($reponse === false) {
-    echo 'Identifiant auteur non existant dans la base.';
-    // header('location: creer_auteur.php'); // A venir
     die();
 }
+ $existe = $reponse->fetch_assoc();
  
+ if ( $existe===false ) {     
+     echo "Aucun auteur a cet id";
+     die();
+ }  
+
+
 // On vérifie le contenu du formulaire
 if (
     
@@ -62,9 +67,6 @@ if (
         header('location: retrieve_livre.php');
     }
 } else {
-    echo 'Erreur de saisie du formulaire.';
-    die();
-}else {
     echo 'Erreur de saisie du formulaire.';
     die();
 }
