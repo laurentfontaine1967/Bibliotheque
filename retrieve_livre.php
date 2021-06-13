@@ -9,6 +9,7 @@ if ($bdd->connect_errno != 0) {
 
 //requete
 $requete='SELECT 
+livre.id,
 livre.titre,
 livre.isbn,
 livre.stock,
@@ -50,7 +51,9 @@ $liste = $reponse->fetch_all(MYSQLI_ASSOC);
             <div class="container-fluid">
                    <a class="navbar-brand" href="#">HOME</a>
                     <!-- <a class="navbar-brand" href="delete_livre.php">modifier</a> -->
-                    <a class="navbar-brand" href="create_livre.php">creer</a>
+                    <a class="navbar-brand" href="create_livre.php">creer un livre</a>
+                    <a class="navbar-brand" href="retrieve_emprunt.php">voir les emprunts</a>
+                    <a class="navbar-brand" href="create_emprunt.php">creer un emprunt</a>
             </div>
         </nav>
 
@@ -74,7 +77,6 @@ $liste = $reponse->fetch_all(MYSQLI_ASSOC);
                     <td class="w-25"><?php echo $element['isbn']; ?></td>
                     <td class="w-25"><?php echo $element['stock']; ?></td>
                     <td class="w-25"><?php echo $element['date_publication']; ?></td>
-
                     <td><a class="btn btn-danger" href="delete_livre.php?id=<?php echo $element['id']; ?>">Supprimer</a></td>
                 </tr>
             <?php } ?>

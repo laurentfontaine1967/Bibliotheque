@@ -55,7 +55,7 @@ $liste = $reponse->fetch_all(MYSQLI_ASSOC);
             <div class="container-fluid">
                 < <a class="navbar-brand" href="#">HOME</a>
                    
-                   <a class="navbar-brand" href="create_emprunt.php">CREER</a> -->
+                   <a class="navbar-brand" href="create_emprunt.php">CREER UN ENPRUNT</a> -->
             </div>
         </nav>
 
