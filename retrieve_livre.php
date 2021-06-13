@@ -51,7 +51,7 @@ $liste = $reponse->fetch_all(MYSQLI_ASSOC);
             <div class="container-fluid">
                    <a class="navbar-brand" href="#">HOME</a>
                     <!-- <a class="navbar-brand" href="delete_livre.php">modifier</a> -->
-                    <a class="navbar-brand" href="create_livre.php">creer un livre</a>
+                    <a class="navbar-brand" href="create-livre.php">creer un livre</a>
                     <a class="navbar-brand" href="retrieve_emprunt.php">voir les emprunts</a>
                     <a class="navbar-brand" href="create_emprunt.php">creer un emprunt</a>
             </div>
